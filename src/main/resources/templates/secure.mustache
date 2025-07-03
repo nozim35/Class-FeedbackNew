@@ -1,0 +1,26 @@
+{{>layout/header}}
+
+<div class="secure-info">
+
+    <h2>Geschützter Bereich</h2>
+
+    <p>Willkommen {{username}}!</p>
+
+    {{#email}}
+        <p>Deine E-Mail-Adresse: <strong> {{email}} </strong></p>
+    {{/email}}
+
+    <p>Du hast folgende Rollen:</p>
+
+    <p class="authorities">
+        {{#authorities}}
+            {{.}}{{^-last}}, {{/-last}}
+        {{/authorities}}
+    </p>
+
+<!--{{>snippet/goBackLink}}-->
+<!--{{>snippet/logoutLink}}-->
+
+</div>
+
+{{>layout/footer}}

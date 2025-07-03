@@ -1,0 +1,27 @@
+{{>layout/header}}
+
+<main class="login">
+    <h2>Anmelden</h2>
+    <form action="./login" method="post">
+        <label for="username">Benutzername:</label>
+        <input type="text" id="username" name="username" required/>
+        <label for="password">Passwort:</label>
+        <input type="password" id="password" name="password" required/>
+        {{>snippet/csrfToken}}
+        <input type="submit" value="Anmelden"/>
+    </form>
+
+    <p>Noch kein Konto? <a href="/register">Registrieren</a></p>
+    <p><a href="/" class="button-startseite">Zurück zur Startseite</a></p>
+
+    {{#error}}
+        <p class="error-message">Ungültiger Benutzername bzw. ungültiges Passwort!</p>
+    {{/error}}
+
+</main>
+
+
+
+<!--{{>snippet/goBackLink}}-->
+
+{{>layout/footer}}

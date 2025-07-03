@@ -1,0 +1,22 @@
+{{>layout/header}}
+
+
+<div class="admin">
+    <h1>Adminbereich</h1>
+
+    <p>Willkommen <strong> {{username}}</strong>!</p>
+
+    <p>Du hast folgende Rollen:</p>
+
+    <p class="authorities">
+        {{#authorities}}
+            {{.}}{{^-last}}, {{/-last}}
+        {{/authorities}}
+    </p>
+
+</div>
+
+<!--{{>snippet/goBackLink}}-->
+<!--{{>snippet/logoutLink}}-->
+
+{{>layout/footer}}
