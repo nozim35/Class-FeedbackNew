@@ -1,7 +1,7 @@
-package de.hawhamburg.logindemo.security;
+package de.hawhamburg.classfee.security;
 
-import de.hawhamburg.logindemo.user.Role;
-import de.hawhamburg.logindemo.user.UserRepository;
+import de.hawhamburg.classfee.user.Role;
+import de.hawhamburg.classfee.user.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,6 +16,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
+import org.springframework.http.HttpMethod;
+
 
 /**
  * Manages the authorization for all endpoints of this web application.
@@ -43,6 +45,7 @@ class AuthorizationConfig {
             .requestMatchers("/secure").authenticated() // This endpoint is available for any logged-in user (regardless of the role).
             .requestMatchers("/logout").authenticated()
                 .requestMatchers("/feedback_form").authenticated()
+                .requestMatchers(HttpMethod.POST, "/feedback/new").authenticated()
                 .requestMatchers("/register").anonymous() // This endpoint is available for any not-logged-in user.
             .requestMatchers(
                     "/",

@@ -1,8 +1,8 @@
-package de.hawhamburg.logindemo.security;
+package de.hawhamburg.classfee.security;
 
-import de.hawhamburg.logindemo.user.Role;
-import de.hawhamburg.logindemo.user.User;
-import de.hawhamburg.logindemo.user.UserRepository;
+import de.hawhamburg.classfee.user.Role;
+import de.hawhamburg.classfee.user.User;
+import de.hawhamburg.classfee.user.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

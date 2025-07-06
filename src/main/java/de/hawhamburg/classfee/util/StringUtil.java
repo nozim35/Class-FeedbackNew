@@ -1,4 +1,4 @@
-package de.hawhamburg.logindemo.util;
+package de.hawhamburg.classfee.util;
 
 public final class StringUtil {
 

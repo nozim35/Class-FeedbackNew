@@ -1,4 +1,4 @@
-package de.hawhamburg.logindemo.h2;
+package de.hawhamburg.classfee.h2;
 
 import org.h2.tools.Server;
 import org.springframework.context.annotation.Bean;

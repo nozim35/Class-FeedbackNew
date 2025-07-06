@@ -1,4 +1,4 @@
-package de.hawhamburg.logindemo.user;
+package de.hawhamburg.classfee.user;
 
 public final class Role {
 

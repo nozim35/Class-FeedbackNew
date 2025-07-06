@@ -1,7 +1,7 @@
-package de.hawhamburg.logindemo.security;
+package de.hawhamburg.classfee.security;
 
-import de.hawhamburg.logindemo.user.User;
-import de.hawhamburg.logindemo.user.UserRepository;
+import de.hawhamburg.classfee.user.User;
+import de.hawhamburg.classfee.user.UserRepository;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

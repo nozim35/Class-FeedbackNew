@@ -3,7 +3,8 @@
 <main class="form-container">
     <h2>Neues Feedback abgeben</h2>
 
-    <form method="post" action="/feedback/new">
+    <form method="post" action="./feedback/new">
+        {{>snippet/csrfToken}}
         <label for="moduleId">Modul:</label>
         <select name="moduleId" required>
             {{#modules}}

@@ -39,9 +39,12 @@
             <li><a href="./feedbacks">Alle Feedbacks</a></li>
             <li><a href="./module">Module</a></li>
             <li><a href="./semester">Semester</a></li>
+            <li><a href=".feedback_form">Feedback abgeben</a></li>
             <li><a href="./about">Über uns</a></li>
-            <li><a href="./secure">Geschützter Bereich</a></li>       <!--wird dashboard sein für angemeldete User-->
-            <li><a href="./admin">Adminbereich</a></li>
+            <li><a href="./secure">Benutzerprofil</a></li>
+            {{#isAdmin}}
+                <li><a href="/admin">Adminbereich</a></li>
+            {{/isAdmin}}
 
         </ul>
     </nav>

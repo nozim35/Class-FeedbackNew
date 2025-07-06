@@ -1,9 +1,9 @@
-package de.hawhamburg.logindemo.auth;
+package de.hawhamburg.classfee.auth;
 
-import de.hawhamburg.logindemo.user.User;
-import de.hawhamburg.logindemo.user.UserRepository;
-import de.hawhamburg.logindemo.util.Redirect;
-import de.hawhamburg.logindemo.util.StringUtil;
+import de.hawhamburg.classfee.user.User;
+import de.hawhamburg.classfee.user.UserRepository;
+import de.hawhamburg.classfee.util.Redirect;
+import de.hawhamburg.classfee.util.StringUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -12,7 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import static de.hawhamburg.logindemo.util.StringUtil.isEmpty;
+import static de.hawhamburg.classfee.util.StringUtil.isEmpty;
 
 @Controller
 class RegisterController {

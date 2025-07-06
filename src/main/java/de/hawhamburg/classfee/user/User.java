@@ -1,4 +1,4 @@
-package de.hawhamburg.logindemo.user;
+package de.hawhamburg.classfee.user;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
