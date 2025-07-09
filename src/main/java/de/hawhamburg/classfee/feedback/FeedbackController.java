@@ -27,6 +27,7 @@ public class FeedbackController {
                                  @RequestParam(required = false) boolean anonymous,
                                  Authentication authentication) {
 
+
         String author = anonymous || authentication == null
                 ? "Anonym"
                 : authentication.getName();
@@ -35,6 +36,7 @@ public class FeedbackController {
 
         Feedback feedback = new Feedback(content, author, LocalDateTime.now(), moduleId);
         feedback.setModuleName(moduleName);
+
         feedbackRepository.save(feedback);
 
         return "redirect:/";
