@@ -2,6 +2,7 @@ package de.hawhamburg.classfee.feedback;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 public class Feedback {
@@ -21,6 +22,7 @@ public class Feedback {
     private Long moduleId;
 
     private String moduleName;
+
 
     // --- Konstruktoren ---
     public Feedback() {}
@@ -51,5 +53,9 @@ public class Feedback {
 
     public String getModuleName() { return moduleName; }
     public void setModuleName(String moduleName) { this.moduleName = moduleName; }
+
+    public String getFormattedDate() {
+        return createdAt.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm 'Uhr'"));
+    }
 
 }

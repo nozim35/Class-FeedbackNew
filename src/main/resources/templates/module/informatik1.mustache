@@ -1,8 +1,19 @@
 {{>layout/header}}
 
-<main class="content">
-    <h2>Informatik 1</h2>
-    <p>Hier kannst du alle Informatik 1 Feedbacks sehen.</p>
-</main>
+<div class="container">
+    <main class="content">
+        <h2>Feedback für {{moduleName}}</h2>
 
+        <div class="feedback-grid">
+            {{#feedbacks}}
+                <div class="feedback-card">
+                    <div class="feedback-author">Autor: {{author}}</div>
+                    <div class="feedback-content">{{content}}</div>
+                    <div class="feedback-date">{{formattedDate}}</div>
+                </div>
+            {{/feedbacks}}
+        </div>
+        <a href="/" class="button-startseite">Zurück zur Startseite</a>
+    </main>
+</div>
 {{>layout/footer}}

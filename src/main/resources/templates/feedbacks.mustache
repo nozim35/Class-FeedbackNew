@@ -1,8 +1,34 @@
 {{>layout/header}}
 
+<div class="container">
     <main class="content">
-        <h2>Feedbacks</h2>
+        <h2>Alle Feedbacks</h2>
         <p>Hier kannst du alle Feedbacks sehen.</p>
+
+        <div class="feedback-grid">
+            {{#latestFeedbacks}}
+                <div class="feedback-card">
+                    <div class="feedback-author">Autor: {{author}}</div>
+                    <div class="feedback-module">Modul: {{moduleName}}</div>
+                    <div class="feedback-content">Feedback: {{content}}</div>
+                    <div class="feedback-date">Datum/Uhrzeit: {{formattedDate}}</div>
+                </div>
+            {{/latestFeedbacks}}
+            <!-- test feedbacks-->
+            <div class="feedback-card">
+                <div class="feedback-author">Autor: student245</div>
+                <div class="feedback-module">Modul: Mathematik 1</div>
+                <div class="feedback-content">Feedback: In Moodle, the Feedback module is disabled by default. To use it...</div>
+                <div class="feedback-date">Datum/Uhrzeit: 14.04.2025 22:12 Uhr</div>
+            </div>
+
+            <div class="feedback-card">
+                <div class="feedback-author">Autor: student245</div>
+                <div class="feedback-module">Modul: Mathematik 1</div>
+                <div class="feedback-content">Feedback: In Moodle, the Feedback mo</div>
+                <div class="feedback-date">Datum/Uhrzeit: 14.04.2025 22:12 Uhr</div>
+            </div>
     </main>
+</div>
 
 {{>layout/footer}}

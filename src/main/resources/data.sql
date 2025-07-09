@@ -17,3 +17,11 @@ CREATE TABLE IF NOT EXISTS Authority -- Sub-Entity of User_Account.
     PRIMARY KEY (role, user_account),
     FOREIGN KEY (user_account) REFERENCES User_Account (id)
 );
+
+-- CREATE TABLE IF NOT EXISTS Feedback (
+--     id long primary key AUTO_INCREMENT,
+--     author varchar(100) NOT NULL,
+--     modul varchar(100) NOT NULL,
+--     feedback_content varchar(5000) NOT NULL,
+--     FOREIGN KEY(author) REFERENCES User_Account(name)
+-- );

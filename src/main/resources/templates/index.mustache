@@ -5,20 +5,42 @@
         <h1>Willkommen bei Class-Fee!</h1>
 
         <h2>Neueste Feedbacks:</h2>
-        <ul>
-             {{#latestFeedbacks}}
-<!--                <li><strong>{{author}}</strong>: {{content}}</li>-->
-                 <p>
-                    <strong>{{author}}</strong> schrieb am {{createdAt}} zu <strong><em>{{moduleName}}</em></strong><br><br>
-                    {{content}}
-                 </p>
-             {{/latestFeedbacks}}
+<!--        <ul>-->
+<!--             {{#latestFeedbacks}}-->
+<!--                 <p>-->
+<!--                    <strong>{{author}}</strong> schrieb am {{createdAt}} zu <strong><em>{{moduleName}}</em></strong><br><br>-->
+<!--                    {{content}}-->
+<!--                 </p>-->
+<!--             {{/latestFeedbacks}}-->
+<!--        </ul>-->
 
 
+        <div class="feedback-grid">
+            {{#latestFeedbacks}}
+                <div class="feedback-card">
+                    <div class="feedback-author">Autor: {{author}}</div>
+                    <div class="feedback-module">Modul: {{moduleName}}</div>
+                    <div class="feedback-content">Feedback: {{content}}</div>
+                    <div class="feedback-date">Datum/Uhrzeit: {{formattedDate}}</div>
+                </div>
+            {{/latestFeedbacks}}
+                <!-- test feedbacks-->
+            <div class="feedback-card">
+                <div class="feedback-author">Autor: student245</div>
+                <div class="feedback-module">Modul: Mathematik 1</div>
+                <div class="feedback-content">Feedback: In Moodle, the Feedback module is disabled by default. To use it...</div>
+                <div class="feedback-date">Datum/Uhrzeit: 14.04.2025 22:12 Uhr</div>
+            </div>
 
-        </ul>
+            <div class="feedback-card">
+                <div class="feedback-author">Autor: student245</div>
+                <div class="feedback-module">Modul: Mathematik 1</div>
+                <div class="feedback-content">Feedback: In Moodle, the Feedback mo</div>
+                <div class="feedback-date">Datum/Uhrzeit: 14.04.2025 22:12 Uhr</div>
+            </div>
+        </div>
 
-
+        <a href="/feedbacks" class="button-startseite">Alle Feedbacks ansehen</a>
     </main>
 </div>
 

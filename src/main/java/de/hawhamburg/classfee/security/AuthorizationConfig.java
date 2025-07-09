@@ -42,9 +42,22 @@ class AuthorizationConfig {
 
         http.authorizeHttpRequests(authz -> authz
             .requestMatchers("/admin").hasAuthority(Role.ADMIN) // This endpoint is only available for users with the ROLE_ADMIN.
-            .requestMatchers("/secure").authenticated() // This endpoint is available for any logged-in user (regardless of the role).
-            .requestMatchers("/logout").authenticated()
-                .requestMatchers("/feedback_form").authenticated()
+            .requestMatchers(
+                    "/secure",
+                    "feedbacks",
+                    "/feedback_form",
+                    "/logout",
+                    "/semester",
+                    "/module",
+                    "/module/dramaturgie1",
+                    "/module/informatik1",
+                    "/module/mathe1",
+                    "/module/media_game_design1",
+                    "/module/medienrecht",
+                    "/module/programmieren1",
+                    "/sommersemester25",
+                    "/wintersemester24_25"
+                    ).authenticated() // This endpoint is available for any logged-in user (regardless of the role).
                 .requestMatchers(HttpMethod.POST, "/feedback/new").authenticated()
                 .requestMatchers("/register").anonymous() // This endpoint is available for any not-logged-in user.
             .requestMatchers(
@@ -52,18 +65,7 @@ class AuthorizationConfig {
                     "/styles.css",
                     "/error",
                     "/login",
-                    "/module",
-                    "/semester",
-                    "/about",
-                    "dramaturgie1",
-                    "informatik1",
-                    "mathe1",
-                    "media_game_design1",
-                    "medienrecht",
-                    "programmieren1",
-                    "sommersemester25",
-                    "wintersemester24_25",
-                    "feedbacks"
+                    "/about"
             ).permitAll() // Make landing page publicly accessible
             .anyRequest().denyAll() // Secure any other page (aka blacklist)
 

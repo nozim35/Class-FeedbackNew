@@ -99,33 +99,59 @@ class MainController {
         return "about";
     }
 
-    @GetMapping("dramaturgie1")
-    public String dramaturgie1() {
+    @GetMapping("/module/dramaturgie1")
+    public String dramaturgie1(Model model) {
+
+        List<Feedback> feedbacks = feedbackRepository.findByModuleName("Dramaturgie 1");
+        model.addAttribute("feedbacks", feedbacks);
+        model.addAttribute("moduleName", "Dramaturgie 1");
+
         return "module/dramaturgie1";
     }
 
-    @GetMapping("informatik1")
-    public String informatik1() {
+    @GetMapping("/module/informatik1")
+    public String informatik1(Model model) {
+        List<Feedback> feedbacks = feedbackRepository.findByModuleName("Informatik 1");
+        model.addAttribute("feedbacks", feedbacks);
+        model.addAttribute("moduleName", "Informatik 1");
         return "module/informatik1";
     }
 
-    @GetMapping("mathe1")
-    public String mathe1() {
+    @GetMapping("/module/mathe1")
+    public String mathe1(Model model) {
+        List<Feedback> feedbacks = feedbackRepository.findByModuleName("Mathematik 1");
+        model.addAttribute("feedbacks", feedbacks);
+        model.addAttribute("moduleName", "Mathematik 1");
         return "module/mathe1";
     }
 
-    @GetMapping("media_game_design1")
-    public String mgd1() {
+    @GetMapping("/module/media_game_design1")
+    public String mgd1(Model model) {
+
+        List<Feedback> feedbacks = feedbackRepository.findByModuleName("Media Game Design 1");
+        model.addAttribute("feedbacks", feedbacks);
+        model.addAttribute("moduleName", "Media Game Design 1");
+
         return "module/media_game_design1";
     }
 
-    @GetMapping("medienrecht")
-    public String medienrecht() {
+    @GetMapping("/module/medienrecht")
+    public String medienrecht(Model model) {
+
+        List<Feedback> feedbacks = feedbackRepository.findByModuleName("Medienrecht");
+        model.addAttribute("feedbacks", feedbacks);
+        model.addAttribute("moduleName", "Medienrecht");
+
         return "module/medienrecht";
     }
 
-    @GetMapping("programmieren1")
-    public String programmieren1() {
+    @GetMapping("/module/programmieren1")
+    public String programmieren1(Model model) {
+
+        List<Feedback> feedbacks = feedbackRepository.findByModuleName("Programmieren 1");
+        model.addAttribute("feedbacks", feedbacks);
+        model.addAttribute("moduleName", "Programmieren 1");
+
         return "module/programmieren1";
     }
 
@@ -146,21 +172,6 @@ class MainController {
         return "feedback_form";
     }
 
-
-//    @GetMapping("/feedback_form")
-//    public String feedbackForm(Model model) {
-//        List<Module> modules = List.of(
-//                new Module(1L, "Mathe 1"),
-//                new Module(2L, "Informatik 1"),
-//                new Module(3L, "Medienrecht"),
-//                new Module(4L, "Media Game Design 1"),
-//                new Module(5L, "Programmieren 1"),
-//                new Module(6L, "Dramaturgie 1")
-//        );
-//
-//        model.addAttribute("modules", modules);  // <- Übergabe an Mustache
-//        return "feedback_form"; // Name deiner .mustache-Datei (ohne .mustache-Endung)
-//    }
 
     @GetMapping("feedbacks")
     public String feedbacks() {return "feedbacks";}
