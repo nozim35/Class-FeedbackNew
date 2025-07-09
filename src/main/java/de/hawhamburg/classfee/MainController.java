@@ -99,70 +99,70 @@ class MainController {
         return "about";
     }
 
-    @GetMapping("/module/dramaturgie1")
+    @GetMapping("/dramaturgie1")
     public String dramaturgie1(Model model) {
 
         List<Feedback> feedbacks = feedbackRepository.findByModuleName("Dramaturgie 1");
         model.addAttribute("feedbacks", feedbacks);
         model.addAttribute("moduleName", "Dramaturgie 1");
 
-        return "module/dramaturgie1";
+        return "dramaturgie1";
     }
 
-    @GetMapping("/module/informatik1")
+    @GetMapping("/informatik1")
     public String informatik1(Model model) {
         List<Feedback> feedbacks = feedbackRepository.findByModuleName("Informatik 1");
         model.addAttribute("feedbacks", feedbacks);
         model.addAttribute("moduleName", "Informatik 1");
-        return "module/informatik1";
+        return "informatik1";
     }
 
-    @GetMapping("/module/mathe1")
+    @GetMapping("/mathe1")
     public String mathe1(Model model) {
         List<Feedback> feedbacks = feedbackRepository.findByModuleName("Mathematik 1");
         model.addAttribute("feedbacks", feedbacks);
         model.addAttribute("moduleName", "Mathematik 1");
-        return "module/mathe1";
+        return "mathe1";
     }
 
-    @GetMapping("/module/media_game_design1")
+    @GetMapping("/media_game_design1")
     public String mgd1(Model model) {
 
         List<Feedback> feedbacks = feedbackRepository.findByModuleName("Media Game Design 1");
         model.addAttribute("feedbacks", feedbacks);
         model.addAttribute("moduleName", "Media Game Design 1");
 
-        return "module/media_game_design1";
+        return "media_game_design1";
     }
 
-    @GetMapping("/module/medienrecht")
+    @GetMapping("/medienrecht")
     public String medienrecht(Model model) {
 
         List<Feedback> feedbacks = feedbackRepository.findByModuleName("Medienrecht");
         model.addAttribute("feedbacks", feedbacks);
         model.addAttribute("moduleName", "Medienrecht");
 
-        return "module/medienrecht";
+        return "medienrecht";
     }
 
-    @GetMapping("/module/programmieren1")
+    @GetMapping("/programmieren1")
     public String programmieren1(Model model) {
 
         List<Feedback> feedbacks = feedbackRepository.findByModuleName("Programmieren 1");
         model.addAttribute("feedbacks", feedbacks);
         model.addAttribute("moduleName", "Programmieren 1");
 
-        return "module/programmieren1";
+        return "programmieren1";
     }
 
-    @GetMapping("sommersemester25")
+    @GetMapping("/sommersemester25")
     public String sose25() {
-        return "module/sommersemester25";
+        return "sommersemester25";
     }
 
-    @GetMapping("wintersemester24_25")
+    @GetMapping("/wintersemester24_25")
     public String wise2425() {
-        return "module/wintersemester24_25";
+        return "wintersemester24_25";
     }
 
     @GetMapping("/feedback_form")

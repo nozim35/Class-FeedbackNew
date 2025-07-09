@@ -49,12 +49,12 @@ class AuthorizationConfig {
                     "/logout",
                     "/semester",
                     "/module",
-                    "/module/dramaturgie1",
-                    "/module/informatik1",
-                    "/module/mathe1",
-                    "/module/media_game_design1",
-                    "/module/medienrecht",
-                    "/module/programmieren1",
+                    "/dramaturgie1",
+                    "/informatik1",
+                    "/mathe1",
+                    "/media_game_design1",
+                    "/medienrecht",
+                    "/programmieren1",
                     "/sommersemester25",
                     "/wintersemester24_25"
                     ).authenticated() // This endpoint is available for any logged-in user (regardless of the role).
