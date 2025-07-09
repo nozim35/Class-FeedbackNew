@@ -174,5 +174,12 @@ class MainController {
 
 
     @GetMapping("feedbacks")
-    public String feedbacks() {return "feedbacks";}
+    public String feedbacks(Model model) {
+        // Letzte 5 Feedbacks
+
+        List<Feedback> latestFeedbacks = feedbackRepository.findTop5ByOrderByCreatedAtDesc();
+        model.addAttribute("latestFeedbacks", latestFeedbacks);
+
+
+        return "feedbacks";}
 }
