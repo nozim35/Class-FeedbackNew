@@ -32,7 +32,7 @@ class AuthorizationConfig {
 
         http.formLogin(form -> form
                 .loginPage(loginEndpoint)
-                .defaultSuccessUrl("/", true) // 👈 Nach erfolgreichem Login IMMER auf "/" umleiten
+                .defaultSuccessUrl("/", true) // Nach erfolgreichem Login IMMER auf "/" umleiten
                 .failureHandler(new SimpleUrlAuthenticationFailureHandler(loginEndpoint + "?error=true"))
                 .permitAll()
         );
@@ -44,7 +44,7 @@ class AuthorizationConfig {
             .requestMatchers("/admin").hasAuthority(Role.ADMIN) // This endpoint is only available for users with the ROLE_ADMIN.
             .requestMatchers(
                     "/secure",
-                    "feedbacks",
+                    "/feedbacks",
                     "/feedback_form",
                     "/logout",
                     "/semester",

@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8" />
     <title>Class-Fee | Startseite</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
 </head>
 
-<a href="/feedback_form" class="fab-button" title="Feedback abgeben">+</a>
+<a href="./feedback_form" class="fab-button" title="Feedback abgeben">+</a>
 
 <body>
 <div class="top-area">
     <!-- Seitenname als blaues Viereck -->
     <div class="brand-box">
-        <a href="/" class="brand-link">Class-Fee</a>
+        <a href="./" class="brand-link">Class-Fee</a>
     </div>
 
     <!-- Login und Registrierung -->
     <div class="auth-buttons">
 
     {{^authenticated}}
-        <a href="/login" class="btn login-btn">Anmelden</a>
-        <a href="/register" class="btn signin-btn">Registrieren</a>
+        <a href="./login" class="btn login-btn">Anmelden</a>
+        <a href="./register" class="btn signin-btn">Registrieren</a>
     {{/authenticated}}
 
     {{#authenticated}}
-        <form action="/logout" method="post" style="display: inline;">
+        <form action="./logout" method="post" style="display: inline;">
             {{>snippet/csrfToken}}
             <input type="submit" value="Abmelden" class="btn signout-btn"/>
         </form>
@@ -43,7 +43,7 @@
             <li><a href="./about">Über uns</a></li>
             <li><a href="./secure">Benutzerprofil</a></li>
             {{#isAdmin}}
-                <li><a href="/admin">Adminbereich</a></li>
+                <li><a href="./admin">Adminbereich</a></li>
             {{/isAdmin}}
 
         </ul>

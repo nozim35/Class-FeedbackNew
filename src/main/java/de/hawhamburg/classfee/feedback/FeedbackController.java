@@ -24,6 +24,7 @@ public class FeedbackController {
     @PostMapping("/new")
     public String submitFeedback(@RequestParam Long moduleId,
                                  @RequestParam String content,
+                                // @RequestParam String semester,
                                  @RequestParam(required = false) boolean anonymous,
                                  Authentication authentication) {
 
@@ -36,7 +37,6 @@ public class FeedbackController {
 
         Feedback feedback = new Feedback(content, author, LocalDateTime.now(), moduleId);
         feedback.setModuleName(moduleName);
-
         feedbackRepository.save(feedback);
 
         return "redirect:/";

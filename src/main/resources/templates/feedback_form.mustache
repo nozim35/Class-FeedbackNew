@@ -9,9 +9,15 @@
         <select name="moduleId" required>
             {{#modules}}
                 <option value="{{id}}">{{name}}</option>
-
             {{/modules}}
         </select>
+<!--
+        <label for="semester">Semester:</label>
+        <select name="semester" required>
+            <option value="Sommersemester 25">Sommersemester 25</option>
+            <option value="Wintersemester 24/25">Wintersemester 24/25</option>
+        </select>
+-->
 
         <label for="content">Dein Feedback:</label>
         <textarea name="content" rows="6" placeholder="Was lief gut? Was könnte besser sein?" required></textarea>

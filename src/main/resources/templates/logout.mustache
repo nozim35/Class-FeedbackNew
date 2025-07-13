@@ -3,7 +3,7 @@
 <p>Do your really want to logout out?</p>
 
 {{#authenticated}}
-    <form action="/logout" method="post" style="display: inline;">
+    <form action="./logout" method="post" style="display: inline;">
         {{>snippet/csrfToken}}
         <input type="submit" value="Abmelden" class="btn signout-btn"/>
     </form>

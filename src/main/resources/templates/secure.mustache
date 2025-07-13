@@ -2,7 +2,7 @@
 
 <div class="secure-info">
 
-    <h2>Geschützter Bereich</h2>
+    <h2>Benutzerprofile</h2>
 
     <p>Willkommen {{username}}!</p>
 
@@ -10,6 +10,7 @@
         <p>Deine E-Mail-Adresse: <strong> {{email}} </strong></p>
     {{/email}}
 
+    {{#isADmin}}
     <p>Du hast folgende Rollen:</p>
 
     <p class="authorities">
@@ -17,6 +18,7 @@
             {{.}}{{^-last}}, {{/-last}}
         {{/authorities}}
     </p>
+    {{/isADmin}}
 
 <!--{{>snippet/goBackLink}}-->
 <!--{{>snippet/logoutLink}}-->

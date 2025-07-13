@@ -155,6 +155,7 @@ class MainController {
         return "programmieren1";
     }
 
+
     @GetMapping("/sommersemester25")
     public String sose25() {
         return "sommersemester25";
@@ -165,6 +166,22 @@ class MainController {
         return "wintersemester24_25";
     }
 
+/*
+    @GetMapping("/sommersemester25")
+    public String sommersemester25(Model model) {
+        List<Feedback> ss25Feedbacks = feedbackRepository.findBySemester("Sommersemester 25");
+        model.addAttribute("feedbacks", ss25Feedbacks);
+        return "module/sommersemester25";
+    }
+
+    @GetMapping("/wintersemester24_25")
+    public String wintersemester2425(Model model) {
+        List<Feedback> ws2425Feedbacks = feedbackRepository.findBySemester("Wintersemester 24/25");
+        model.addAttribute("feedbacks", ws2425Feedbacks);
+        return "module/wintersemester24_25";
+    }
+*/
+
     @GetMapping("/feedback_form")
     public String feedbackForm(Model model) {
         List<Module> modules = moduleService.getAllModules();
@@ -173,7 +190,7 @@ class MainController {
     }
 
 
-    @GetMapping("feedbacks")
+    @GetMapping("/feedbacks")
     public String feedbacks(Model model) {
         // Letzte 5 Feedbacks
 
