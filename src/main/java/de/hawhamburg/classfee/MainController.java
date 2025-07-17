@@ -3,7 +3,7 @@ package de.hawhamburg.classfee;
 import de.hawhamburg.classfee.feedback.Feedback;
 import de.hawhamburg.classfee.feedback.FeedbackRepository;
 import de.hawhamburg.classfee.feedback.Module;
-import de.hawhamburg.classfee.feedback.ModuleService;
+import de.hawhamburg.classfee.feedback.ModuleAuswahl;
 import de.hawhamburg.classfee.user.User;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -20,22 +20,13 @@ class MainController {
     private static final String AUTHORITIES_KEY = "authorities";
     private static final String EMAIL_KEY = "email";
     private final FeedbackRepository feedbackRepository;
-    private final ModuleService moduleService;
+    private final ModuleAuswahl moduleAuswahl;
 
-    MainController(FeedbackRepository feedbackRepository, ModuleService moduleService) {
+    MainController(FeedbackRepository feedbackRepository, ModuleAuswahl moduleAuswahl) {
         this.feedbackRepository = feedbackRepository;
-        this.moduleService = moduleService;
+        this.moduleAuswahl = moduleAuswahl;
     }
 
-//    @GetMapping("/")
-//    String landingPage(Model model, Authentication authentication) {
-//        if (authentication == null) {
-//            model.addAttribute(AUTHENTICATED_KEY, false);
-//        } else {
-//            model.addAttribute(AUTHENTICATED_KEY, authentication.isAuthenticated());
-//        }
-//        return "index";
-//    }
 
     @GetMapping("/")
     String landingPage(Model model, Authentication authentication) {
@@ -166,25 +157,10 @@ class MainController {
         return "wintersemester24_25";
     }
 
-/*
-    @GetMapping("/sommersemester25")
-    public String sommersemester25(Model model) {
-        List<Feedback> ss25Feedbacks = feedbackRepository.findBySemester("Sommersemester 25");
-        model.addAttribute("feedbacks", ss25Feedbacks);
-        return "module/sommersemester25";
-    }
-
-    @GetMapping("/wintersemester24_25")
-    public String wintersemester2425(Model model) {
-        List<Feedback> ws2425Feedbacks = feedbackRepository.findBySemester("Wintersemester 24/25");
-        model.addAttribute("feedbacks", ws2425Feedbacks);
-        return "module/wintersemester24_25";
-    }
-*/
 
     @GetMapping("/feedback_form")
     public String feedbackForm(Model model) {
-        List<Module> modules = moduleService.getAllModules();
+        List<Module> modules = moduleAuswahl.getAllModules();
         model.addAttribute("modules", modules);
         return "feedback_form";
     }
@@ -196,7 +172,6 @@ class MainController {
 
         List<Feedback> latestFeedbacks = feedbackRepository.findTop5ByOrderByCreatedAtDesc();
         model.addAttribute("latestFeedbacks", latestFeedbacks);
-
 
         return "feedbacks";}
 }

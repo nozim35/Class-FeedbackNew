@@ -14,11 +14,11 @@ import java.time.LocalDateTime;
 public class FeedbackController {
 
     private final FeedbackRepository feedbackRepository;
-    private final ModuleService moduleService;
+    private final ModuleAuswahl moduleAuswahl;
 
-    public FeedbackController(FeedbackRepository feedbackRepository, ModuleService moduleService) {
+    public FeedbackController(FeedbackRepository feedbackRepository, ModuleAuswahl moduleAuswahl) {
         this.feedbackRepository = feedbackRepository;
-        this.moduleService = moduleService;
+        this.moduleAuswahl = moduleAuswahl;
     }
 
     @PostMapping("/new")
@@ -33,7 +33,7 @@ public class FeedbackController {
                 ? "Anonym"
                 : authentication.getName();
 
-        String moduleName = moduleService.getModuleNameById(moduleId);             //Modulename
+        String moduleName = moduleAuswahl.getModuleNameById(moduleId);             //Modulename
 
         Feedback feedback = new Feedback(content, author, LocalDateTime.now(), moduleId);
         feedback.setModuleName(moduleName);

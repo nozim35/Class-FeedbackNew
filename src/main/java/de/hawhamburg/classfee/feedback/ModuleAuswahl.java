@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class ModuleService {
+public class ModuleAuswahl {
 
     public List<Module> getAllModules() {
         return List.of(
